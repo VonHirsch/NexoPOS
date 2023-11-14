@@ -3,7 +3,7 @@
 
 {!! 
     sprintf(
-        __( 'Someone has requested to reset your password on __"%s"__. If you remember having done that request, please proceed by clicking the button below. ' ),
+        __( 'Someone has requested to reset your password on %s. If you remember having done that request, please proceed by clicking the button below. ' ),
         ns()->option->get( 'ns_store_name' )
     )
 !!}

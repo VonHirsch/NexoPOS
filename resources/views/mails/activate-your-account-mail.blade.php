@@ -1,13 +1,13 @@
 @component('mail::message')
-@if ( $options->get( 'ns_notifications_registrations_user_activate_body' ) )
-    {!! $options->get( 'ns_notifications_registrations_user_activate_body' ) !!}
+@if ( ns()->option->get( 'ns_notifications_registrations_user_activate_body' ) )
+    {!! ns()->option->get( 'ns_notifications_registrations_user_activate_body' ) !!}
 @else
     # {{ __( 'Activate Your Account' ) }}
 
     {{ 
         sprintf(
-            __( 'The account you have created for __%s__, require an activation. In order to proceed, please click on the following link' ),
-            $options->get( 'ns_store_name' ),
+            __( 'The account you created for %s requires activation. In order to proceed, please click on the following link:' ),
+            ns()->option->get( 'ns_store_name' ),
             $user->username
         )
     }}

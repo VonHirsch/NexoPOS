@@ -3,7 +3,7 @@
 
 {{ 
     sprintf(
-        __( 'Your password has been successfully updated on __%s__. You can now login with your new password.' ),
+        __( 'Your password has been successfully updated on %s. You can now login with your new password.' ),
         ns()->option->get( 'ns_store_name' )
     )
 }}
