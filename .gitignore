@@ -6,6 +6,8 @@ error.log
 node_modules
 composer-lock.json
 .env.testing
+.env.bak
+.env.generated
 .phpunit.result.cache
 worker.log
 *.log
