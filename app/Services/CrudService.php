@@ -276,7 +276,9 @@ class CrudService
              * mentionned on the fillable array.
              */
             if ( empty( $fillable ) || in_array( 'author', $fillable ) ) {
-                $entry->author = Auth::id();
+                // TODO: modify this to be a crud hook / function like "fillAuthor" or something
+                // This causes consignment items to take on a new author when they're edited by another user
+                //$entry->author = Auth::id();
             }
 
             /**

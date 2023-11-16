@@ -275,7 +275,7 @@ class ProductService
             }
         }
 
-        $product->author = $fields[ 'author' ] ?? Auth::id();
+        $product->author = $data[ 'author' ] ?? Auth::id();
         $product->save();
 
         /**
