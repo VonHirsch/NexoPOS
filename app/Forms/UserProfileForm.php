@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 
 class UserProfileForm extends SettingsPage
 {
@@ -65,6 +66,8 @@ class UserProfileForm extends SettingsPage
                 }
             }
 
+            // Registered users don't get a user attribute record by default, set user_id here so it can be created on the fly
+            $user->user_id = Auth::id();
             $user->save();
 
             return [
