@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Exceptions\NotAllowedException;
 use App\Models\NsModel;
+use App\Models\Product;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Contracts\View\View as ContractView;
@@ -276,9 +277,12 @@ class CrudService
              * mentionned on the fillable array.
              */
             if ( empty( $fillable ) || in_array( 'author', $fillable ) ) {
-                // TODO: modify this to be a crud hook / function like "fillAuthor" or something
                 // This causes consignment items to take on a new author when they're edited by another user
-                //$entry->author = Auth::id();
+                // so skip it if the crud is on a Product
+                // or this could be crud hook / function like "fillAuthor" or something
+                if (! $entry instanceof Product ) {
+                    $entry->author = Auth::id();
+                }
             }
 
             /**
