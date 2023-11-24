@@ -11,6 +11,9 @@
                 </div>
                 <ul class="w-full">
                     <li class="cursor-pointer text-center">
+                        <a href="{{ route( 'ns.consignment.index' ) }}" class="text-gray-700 text-sm block py-2 w-full hover:bg-gray-100 border-t border-gray-100">{{ __( 'Consignment Home' ) }}</a>
+                    </li>
+                    <li class="cursor-pointer text-center">
                         <a href="{{ route( 'ns.dashboard.users.profile' ) }}" class="text-gray-700 text-sm block py-2 w-full hover:bg-gray-100 border-t border-gray-100">{{ __( 'Profile' ) }}</a>
                     </li>
                     <li class="cursor-pointer text-center">
