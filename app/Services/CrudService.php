@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
@@ -278,9 +279,9 @@ class CrudService
              */
             if ( empty( $fillable ) || in_array( 'author', $fillable ) ) {
                 // This causes consignment items to take on a new author when they're edited by another user
-                // so skip it if the crud is on a Product
+                // so skip it if the crud is on a Product or ConsignorSettings
                 // or this could be crud hook / function like "fillAuthor" or something
-                if (! $entry instanceof Product ) {
+                if ( (! $entry instanceof Product) && (basename(get_class($entry)) != 'ConsignorSettings' ) ) {
                     $entry->author = Auth::id();
                 }
             }
