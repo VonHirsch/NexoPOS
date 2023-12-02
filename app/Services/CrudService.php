@@ -280,8 +280,10 @@ class CrudService
             if ( empty( $fillable ) || in_array( 'author', $fillable ) ) {
                 // This causes consignment items to take on a new author when they're edited by another user
                 // so skip it if the crud is on a Product or ConsignorSettings
-                // or this could be crud hook / function like "fillAuthor" or something
-                if ( (! $entry instanceof Product) && (basename(get_class($entry)) != 'ConsignorSettings' ) ) {
+                // in the future this could be crud hook / function like "fillAuthor" or something
+                // Note: if you add another exception here, be sure to populate author in filterPostInputs()
+                // get_class returns slightly different on dev & prod, so check str_ends_with
+                if ( (! $entry instanceof Product) && (! str_ends_with(get_class($entry), 'ConsignorSettings')) ) {
                     $entry->author = Auth::id();
                 }
             }
