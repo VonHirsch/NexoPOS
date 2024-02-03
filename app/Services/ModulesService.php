@@ -1251,6 +1251,8 @@ class ModulesService
 
             $this->options->set( 'enabled_modules', json_encode( $enabledModules ) );
 
+            //$this->revertMigrations( $module ); // LBH For migration testing
+
             return [
                 'status' => 'success',
                 'code' => 'module_disabled',
