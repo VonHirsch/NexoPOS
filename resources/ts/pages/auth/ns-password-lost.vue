@@ -21,7 +21,7 @@
                 </ns-button>
             </div>
             <div>
-                <ns-link :href="'/sign-up'" type="info">{{ __( 'Go Back' ) }}</ns-link>
+                <ns-link :href="'/sign-in'" type="info">{{ __( 'Go Back' ) }}</ns-link>
             </div>
         </div>
     </div>
