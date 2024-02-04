@@ -14,14 +14,14 @@
             </div>
         </div>
         <div class="flex justify-between items-center border-t ns-box-footer p-3">
-            <div v-if="showRegisterButton">
-                <ns-button :link="true" :href="'/sign-up'" type="success">{{ __( 'Register' ) }}</ns-button>
-            </div>
             <div>
-                <ns-button @click="signIn()" class="justify-between" type="info">
+                <ns-button @click="signIn()" class="justify-between" type="success">
                     <ns-spinner class="mr-2" v-if="isSubitting" size="6" border="2"></ns-spinner>
                     <template>{{ __( 'Sign In' ) }}</template>
                 </ns-button>
+            </div>
+            <div v-if="showRegisterButton">
+                <ns-button :link="true" :href="'/sign-up'" type="info">{{ __( 'Register' ) }}</ns-button>
             </div>
         </div>
     </div>

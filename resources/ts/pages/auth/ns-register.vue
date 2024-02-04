@@ -15,10 +15,10 @@
         </div>
         <div class="flex ns-box-footer border-t justify-between items-center p-3">
             <div>
-                <ns-button :link="true" :href="'/sign-in'" type="success">{{ __( 'Go Back' ) }}</ns-button>
+                <ns-button @click="register()" type="success">{{ __( 'Register' ) }}</ns-button>
             </div>
             <div>
-                <ns-button @click="register()" type="info">{{ __( 'Register' ) }}</ns-button>
+                <ns-button :link="true" :href="'/sign-in'" type="info">{{ __( 'Go Back' ) }}</ns-button>
             </div>
         </div>
     </div>
