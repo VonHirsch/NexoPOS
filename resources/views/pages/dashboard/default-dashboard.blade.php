@@ -3,7 +3,7 @@
         <div class="px-4 w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
             <div class="rounded-lg shadow bg-white flex items-center justify-center flex-col overflow-hidden">
                 <div class="my-4 rounded-full h-32 w-32 border-4 border-white flex items-center justify-center">
-                    <img src="{{ Auth::user()->attribute ? Auth::user()->attribute->avatar_link : asset( 'images/user.png' ) }}" alt="profile">
+                    <img src="{{ Auth::user()->attribute->avatar_link ? Auth::user()->attribute->avatar_link : asset( 'images/user.png' ) }}" alt="profile">
                 </div>
                 <div class="flex flex-col p-3 items-center">
                     <h2 class="text-2xl font-bold text-gray-800">{{ Auth::user()->username }}</h2>
